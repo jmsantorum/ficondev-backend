@@ -1,0 +1,54 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="layout/Layout" t:pageTitle="title">
+
+	<div class="container">
+
+		<h2>Show ingredient</h2>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Protein</th>
+					<th>Fat</th>
+					<th>Carbohydrates</th>
+					<th>Alcohol</th>
+					<th>KCal</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr>
+					<td>${ingredient.name}</td>
+					<td>${ingredient.description}</td>
+					<td>${ingredient.protein}</td>
+					<td>${ingredient.fat}</td>
+					<td>${ingredient.carbohydrates}</td>
+					<td>${ingredient.alcohol}</td>
+					<td>${ingredient.kcal}</td>
+					<td>
+						<ul class="actions">
+							<li>
+								<a t:type="PageLink" t:page="chef/ingredient/Edit" t:context="${ingredient.ingredientId}"
+									class="edit" href="#" title="Edit" rel="tooltip">edit</a>
+							</li>
+							<li>
+								<a t:id="delete" t:type="ActionLink"
+									class="delete" href="#" title="Delete" rel="tooltip">delete</a>
+							</li>
+						</ul>
+					</td>
+				</tr>
+
+
+			</tbody>
+			<tfoot>
+			</tfoot>
+		</table>
+
+		<a href="#" t:type="PageLink" t:page="chef/ingredient/Index" class="btn">Back</a>&nbsp;
+	</div>
+
+</html>

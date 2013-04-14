@@ -1,0 +1,29 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="layout/Layout" t:pageTitle="title">
+
+	<div class="container">
+
+		<form t:type="Form" t:id="loginForm" class="form-signin">
+
+			<!-- Notification -->
+			<t:errors />
+			<!-- /Notification -->
+
+			<h2 class="form-signin-heading">Please sign in</h2>
+		
+			<t:textfield t:id="username" t:validate="required"
+				class="input-block-level" placeholder="Your username" />
+			<input t:id="password" t:type="PasswordField" t:validate="required"
+				class="input-block-level" placeholder="Password" />
+			<label class="checkbox">
+				<input t:type="Checkbox" t:id="rememberMyPassword" /> Remember me
+			</label>
+			
+			<t:submit id="submit-btn" value="${message:submit}" class="btn btn-primary pull-right"/><br/><br/>
+			<a href="#" t:type="PageLink" t:page="client/Register">Register</a>&nbsp;
+			<a href="#" >Recover Password</a>
+			
+		</form>
+	</div>
+
+</html>

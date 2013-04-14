@@ -1,0 +1,11 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="layout/Layout" t:pageTitle="title">
+
+	<div>
+
+		<h2>${message:message}</h2>
+		<a href="#" t:type="PageLink" t:page="account/Login" class="btn btn-primary">Sign in</a>&nbsp;
+
+	</div>
+
+</html>
