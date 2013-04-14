@@ -64,6 +64,8 @@ modelutil mediante: mvn install para luego poder realizar la ejecución del paqu
 Los ficheros necesarios se encuentran todos incluidos en el código que se adjunta y las dependencias son descargadas a la
 hora de realizar la ejecución de las pruebas.
 
+Nota: el Index del backend muestra una pagina en blanco, ir a /account/login para comenzar.
+
 Antes es necesario crear las BBDD necesarias.
 
 - Create two databases with names "pojo" and "pojotest". "pojo" is used to run
