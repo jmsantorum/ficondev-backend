@@ -1,0 +1,74 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="layout/Layout" t:pageTitle="title">
+
+	<div class="container">
+
+		<h2>Client Register</h2>
+
+		<form t:type="Form" t:id="registrationForm">
+
+			<!-- Notification -->
+			<t:errors />
+			<!-- /Notification -->
+
+			<fieldset>
+				<dl>
+					<dt>
+						<t:label class="mandatory" for="username" />
+					</dt>
+					<dd>
+						<input t:id="username" t:type="TextField" t:validate="required" size="28" />
+					</dd>
+					<dt>
+						<t:label class="mandatory" for="password" />
+					</dt>
+					<dd>
+						<input t:id="password" t:type="PasswordField" t:validate="required" size="28" />
+					</dd> 
+					<dt>
+						<t:label class="mandatory" for="retypePassword" />
+					</dt> 
+					<dd>
+						<input t:id="retypePassword" t:type="PasswordField" t:validate="required" size="28" />
+					</dd>
+					<dt>
+						<t:label class="mandatory" for="name" />
+					</dt>
+					<dd>
+						<input t:id="name" t:type="TextField" t:validate="required" size="28" />
+					</dd>
+					<dt>
+						<t:label class="mandatory" for="direction" />
+					</dt>
+					<dd>
+						<input t:id="direction" t:type="TextField" t:validate="required" size="28" />
+					</dd>
+					<dt>
+						<t:label for="phoneNumber" />
+					</dt>
+					<dd>
+						<input t:id="phoneNumber" t:type="TextField" size="28" />
+					</dd>
+					<dt>
+						<t:label class="mandatory" for="email" />
+					</dt>
+					<dd>
+						<input t:id="email" t:type="TextField" t:validate="required,regexp" size="28" />
+					</dd>
+					
+					<input t:id="timeZone" t:type="Hidden" t:validate="required" size="28" />
+					<script>
+						//Load javascript
+						jQuery("[name|=timeZone]")[0].value="Europe/Madrid";
+					</script>
+
+					<!-- <t:recaptcha.ReCaptcha publickey='${publicKey}' privatekey='${privateKey}' /> -->
+				</dl>
+			</fieldset>
+			<span class="mandatory"></span> required fields
+			<a href="#" t:type="PageLink" t:page="account/Login" class="btn">Sign in</a>&nbsp;
+			<button type="submit" class="btn btn-primary">Register</button>
+		</form>
+	</div>
+
+</html>

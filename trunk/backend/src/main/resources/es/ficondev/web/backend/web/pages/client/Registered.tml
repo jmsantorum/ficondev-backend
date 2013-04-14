@@ -1,0 +1,16 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="layout/Layout" t:pageTitle="title">
+
+	<div class="article-container center">
+
+		<b>${message:message}</b>
+
+		<p>Email content (not enabled):<br/>
+			<code>
+				${emailContent}
+			</code>
+		</p>
+
+	</div>
+
+</html>

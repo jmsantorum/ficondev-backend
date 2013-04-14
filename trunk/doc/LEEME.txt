@@ -1,0 +1,65 @@
+FicOnDev | 2013
+
+Produccion:
+  Backend
+
+Participantes:
+  Jose Manuel Santorum
+  Tania Santos
+
+
+Partiendo del tema publicado para la realización de esta producción: "Tienes un negocio
+de restauración y quieres darle presencia online, ¿como lo presentarías y que servicios darías?"
+primero se ha llevado a cabo el modelado del dominio definiendo una serie de roles a los que se
+debe dar soporte (ADMIN, WAITER, DEALER, CHEF, CLIENT & PROVIDER) así como los servicios a los
+que deberían tener acceso los mismos (accountService, bookingService, ingredientService, etc).
+
+Para la realización de este diseño se ha hecho uso de tecnología J2EE,Spring,Hibernate entre otros.
+
+Dado que nos encontramos ante el diseño del backend de una aplicación empresarial se ha optado
+desde el primer momento por un diseño modular separando la capa modelo de la capa servicios creando
+así los paquetes modelutil y backend. En el primero de ellos definiremos toda la capa modelo y en
+el segundo la capa que de servicio al frontend (en nuestro caso debido a limitaciones de tiempo no se
+ha invertido mucho esfuerzo en esta parte, en la cual se ha hecho uso de html y en la cual sería
+ideal llevar a cabo mediante la implementación de servicios REST vía XML/JSON o SOAP).
+
+De entre todo lo que se ha modelado solo se ha podido implementar una pequeña parte del sistema dentro
+de la cual nos podemos encontrar entre otras cosas con los modelos que definen a los tipos de usuarios
+que puede accer uso del sistema así como la lógica de negocio necesaria para llevar a cabo el registo
+de los mismos, gestión de roles, etc.
+
+Una vez definidos los usuarios se ha modelado la lógica de negocio necesaria para el rol del CHEF
+donde nos podemos encontrar con la gestión de ingredientes, platos así como la generación de menús
+en función de varios parámetros de entrada.
+
+Llegados a este punto nos pareció interesante realizar la parte de negocio relacionada con el DELIVER
+donde se ha hecho uso de la API de Google Maps para la definición de la ruta óptima que debe seguir el
+repartidor a la hora de hacer el reparto. En este caso nos hemos enfrentado a una API que ofrecía tanto
+XML como JSON en la representación de sus resultados, dado que se disponía de poco tiempo y que anteriormente
+solo se había trabajado con XML se ha optado por esta forma de representación a la hora de parsear los resultados
+devueltos.
+
+Una vez llegados a este punto nos pusimos con la gestión de reservas, donde nos pareció interesante que a la hora
+de reservar la mesa el cliente pudiese indicar si le importaría o no compartir mesa con otros clientes lo cual nos
+lleva a una gestión de reservas para nada fácil dado que ante la cancelación de una de las mismas se podría realizar
+una reasignación de mesas para optimizaciones de espacio.
+
+Dado que esta es la última parte a la que nos hemos enfrentado y que no hemos podido avanzar más dejamos
+anotados los fallos conocidos de los que se tiene constancia.
+
+Fallos conocidos:
+- BookingService/makeBooking: no devuelve correctamente la lista de mesas disponibles para
+la realización de las reservas. Esto se ve reflejado en la ejecución de los test.
+
+Modo de despliegue:
+
+Para el despliegue de esta aplicación es necesario el uso de MAVEN. (mismo que asignatura IS).
+
+Nos encontramos antes un directorio principal web con los subdirectorios modelutil y backend.
+
+Dentro de modelutil para la ejecución de los tes debemos llevar a cabo el siguiente comando: mvn test.
+A continuación y antes de realizar la ejecución del paquete backend se debe realizar la instalación del paquete
+modelutil mediante: mvn install para luego poder realizar la ejecución del paquete backend con el uso de: mvn jetty:run.
+
+Los ficheros necesarios se encuentran todos incluidos en el código que se adjunta y las dependencias son descargadas a la
+hora de realizar la ejecución de las pruebas.

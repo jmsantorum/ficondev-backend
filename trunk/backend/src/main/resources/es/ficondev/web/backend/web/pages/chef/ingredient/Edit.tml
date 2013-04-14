@@ -1,0 +1,67 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="layout/Layout" t:pageTitle="title">
+
+	<div class="container">
+
+		<h2>Edit ingredient</h2>
+
+		<form t:type="Form" t:id="addForm">
+
+			<!-- Notification -->
+			<t:errors />
+			<!-- /Notification -->
+
+			<fieldset>
+				<dl>
+					<dt>
+						<t:label class="mandatory" for="name" />
+					</dt>
+					<dd>
+						<input t:id="name" t:type="TextField" t:validate="required" size="28" />
+					</dd>
+					<dt>
+						<t:label class="mandatory" for="description" />
+					</dt>
+					<dd>
+						<input t:id="description" t:type="TextField" t:validate="required" size="28" />
+					</dd> 
+					<dt>
+						<t:label class="mandatory" for="protein" />
+					</dt> 
+					<dd>
+						<input t:id="protein" t:type="TextField" t:validate="required" size="28" />
+					</dd>
+					<dt>
+						<t:label class="mandatory" for="fat" />
+					</dt>
+					<dd>
+						<input t:id="fat" t:type="TextField" t:validate="required" size="28" />
+					</dd>
+					<dt>
+						<t:label class="mandatory" for="carbohydrates" />
+					</dt>
+					<dd>
+						<input t:id="carbohydrates" t:type="TextField" t:validate="required" size="28" />
+					</dd>
+					<dt>
+						<t:label class="mandatory" for="alcohol" />
+					</dt>
+					<dd>
+						<input t:id="alcohol" t:type="TextField" size="28" />
+					</dd>
+					<dt>
+						<t:label class="mandatory" for="kcal" />
+					</dt>
+					<dd>
+						<input t:id="kcal" t:type="TextField" size="28" />
+					</dd>
+					
+				</dl>
+			</fieldset>
+			<span class="mandatory"></span> required fields
+			<a href="#" t:type="PageLink" t:page="chef/ingredient/View" t:context="ingredientId" class="btn">Back</a>&nbsp;
+			<button type="submit" class="btn btn-primary">Save</button>
+		</form>
+	</div>
+
+</html>

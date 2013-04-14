@@ -1,0 +1,12 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="layout/Layout" t:pageTitle="title">
+
+	<div class="container">
+		<h3>My Sections:</h3>
+		<a t:type="PageLink" t:page="chef/ingredient/Index" class="btn btn-large">Ingredients</a>
+		<a t:type="PageLink" t:page="chef/plate/Index" class="btn btn-large">Plates</a>
+			
+		<hr />
+		<a t:type="PageLink" t:page="account/Dashboard" class="btn btn-large">Back</a>
+	</div>
+</html>
