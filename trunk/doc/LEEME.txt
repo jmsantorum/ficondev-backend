@@ -63,3 +63,25 @@ modelutil mediante: mvn install para luego poder realizar la ejecución del paqu
 
 Los ficheros necesarios se encuentran todos incluidos en el código que se adjunta y las dependencias son descargadas a la
 hora de realizar la ejecución de las pruebas.
+
+Antes es necesario crear las BBDD necesarias.
+
+- Create two databases with names "pojo" and "pojotest". "pojo" is used to run
+  applications and "pojotest" for the Maven test phase.
+
+  mysqladmin -u root create pojo
+  mysqladmin -u root create pojotest
+
+- Create a user with name "pojo" and password "pojo", and allow her/him to
+  access both databases from local host.
+
+  mysql -u root
+
+  GRANT ALL PRIVILEGES ON pojo.* to pojo@localhost IDENTIFIED BY 'pojo';
+  GRANT ALL PRIVILEGES ON pojotest.* to pojo@localhost IDENTIFIED BY 'pojo';
+
+- Try to access both databases as user "pojo" with password "pojo".
+
+  mysql -u pojo --password=pojo pojo
+  mysql -u pojo --password=pojo pojotest
+
